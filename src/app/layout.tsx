@@ -18,15 +18,11 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
       lang="pt-BR"
     >
       <body>
-        <header>
-          <h1>The blog</h1>
-        </header>
-        <div className="bg-red-500">
+        
+        <div >
           {children}
         </div>
-        <footer>
-          <p>© 2025 The blog</p>
-        </footer>
+        
       </body>
     </html>
   );
