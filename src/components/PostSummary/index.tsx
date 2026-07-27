@@ -1,5 +1,6 @@
-import { formarDistanceToNow, formatDateTime } from "@/utils/format-datetime";
+
 import { PostHeading } from "../PostHeading";
+import { PostDate } from "../PostDate";
 
 type PostSummaryProps = {
   postHeading: 'h1' | 'h2';
@@ -12,13 +13,7 @@ type PostSummaryProps = {
 export function PostSummary({ postHeading, postLink , createdAt, title, excerpt }: PostSummaryProps) {
   return(
     <div className="flex flex-col gap-4 sm:justify-center">
-                  <time
-                    dateTime={createdAt}
-                    className="text-sm/tight  block text-slate-600"
-                    title={formarDistanceToNow(createdAt)}
-                  >
-                    {formatDateTime(createdAt)}
-                  </time>
+                  <PostDate dateTime={createdAt}/>
     
                   <PostHeading as="h1" url={postLink}>
                     {title}
