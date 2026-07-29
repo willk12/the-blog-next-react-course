@@ -19,9 +19,11 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
     <html
       lang="pt-BR"
     >
-      <body className='p-8 bg-slate-100'>
-        <Header />
-        <Container>{children}</Container>
+      <body >
+        
+        <Container>
+          <Header />
+          {children}</Container>
         <Footer />
       </body>
     </html>

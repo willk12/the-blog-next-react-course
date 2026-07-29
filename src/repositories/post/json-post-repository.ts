@@ -25,6 +25,11 @@ export class JsonPostRepository implements PostRepository {
     return posts.filter((post: PostModel) => post.published);
   }
 
+  async findAll(): Promise<PostModel[]> {
+    const posts = await this.readFromDisk();
+    return posts.filter((post: PostModel) => post.published);
+  }
+
   async findById(id: string): Promise<PostModel | undefined> {
     const posts = await this.findAllPublic();
     const post = posts.find((post: PostModel) => post.id === id);
@@ -34,7 +39,7 @@ export class JsonPostRepository implements PostRepository {
     return post;
   }
 
-  async findByslug(slug: string): Promise<PostModel | undefined> {
+  async findByslugPublic(slug: string): Promise<PostModel | undefined> {
     const posts = await this.findAllPublic();
     const post = posts.find((post: PostModel) => post.slug === slug);
 
